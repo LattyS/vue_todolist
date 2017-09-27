@@ -5,10 +5,11 @@
         el: 'main#app',
         data: {
             tasks: [
-                {title: "Apprendre Vue.js", isDone: true},
-                {title: "Faire une To Do List", isDone: false},
-                {title: "Envoyer un mail au prof", isDone: false}
-            ]
+                {title: "Apprendre Vue.js", isDone: false},
+                {title: "Faire une To Do List", isDone: true},
+                {title: "Envoyer un mail au prof", isDone: true}
+            ],
+            title : ""
         },
 
         methods: {
@@ -24,6 +25,12 @@
 
             deleteTask: function (index) {
                 Vue.delete(this.tasks, index);
+            },
+
+            addTask: function (title) {
+                if (title !== "") {
+                    Vue.set(this.tasks, this.tasks.length, {title, isDone: false});
+                }
             }
         }
     });
