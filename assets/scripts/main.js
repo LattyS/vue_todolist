@@ -9,6 +9,18 @@
                 {title: "Faire une To Do List", isDone: false},
                 {title: "Envoyer un mail au prof", isDone: false}
             ]
+        },
+
+        methods: {
+            remaining: function () {
+                var remains = 0;
+                this.tasks.forEach(function (task) {
+                    if (task.isDone === false) {
+                        remains++;
+                    }
+                });
+                return remains;
+            }
         }
     });
 }
