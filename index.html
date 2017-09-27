@@ -34,7 +34,7 @@
 
     <h3>Liste des tâches</h3>
 
-    <p>Il reste <strong>{{ remaining() }}</strong> tâche sur <strong>{{ tasks.length }}</strong> à effectuer.</p>
+    <p>Il reste <strong>{{ remaining() }}</strong> tâche<span v-if="remaining() > 1">s</span> sur <strong>{{ tasks.length }}</strong> à effectuer.</p>
     
     <ul class="collection">
         <li class="collection-item" v-for="(task, index) in tasks">
